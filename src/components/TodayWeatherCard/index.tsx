@@ -1,13 +1,27 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {getLocation, ILocation} from "@/storage/location";
 
 import "./index.scss";
 
 export const TodayWeatherCard = () => {
   const [location, setLocation] = useState<ILocation>();
-  getLocation().then(res => {
-    setLocation(res);
-  })
+
+  useEffect(() => {
+    const fetchLocation = async () => {
+      try {
+        const loc = await getLocation();
+        setLocation(loc);
+      } catch (error) {
+        console.error("Failed to fetch location, retrying...", error);
+        // 递归调用，直到成功获取位置
+        await fetchLocation();
+      }
+    };
+
+    if (!location) {
+      fetchLocation().then();
+    }
+  }, [location]);
 
   return (
     <div className='card'>

@@ -1,0 +1,63 @@
+.card {
+  width: 75%;
+
+  margin-top: 100px;
+  padding-left: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(78, 100, 146, 0.05);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  .location {
+    font-size: 30px;
+    font-weight: bold;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .current-temperature {
+      font-size: 250px;
+    }
+
+    .current-weather {
+      font-size: 30px;
+      font-weight: bold;
+
+      margin-bottom: 30px;
+
+      span {
+        display: inline-block;
+        margin-right: 25px;
+      }
+    }
+
+    .other-information {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      button {
+        margin: 0 10px 0 0;
+        padding: 5px 25px;
+
+        display: inline-block;
+        font-size: 25px;
+
+        background-color: rgba(0, 0, 0, 0.01);
+        border-radius: 35px;
+        border: lightgrey  1px solid;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+      }
+    }
+  }
+}

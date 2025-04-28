@@ -9,7 +9,7 @@ import prodConfig from './prod'
 export default defineConfig<'vite'>(async (merge, {command, mode}) => {
   const baseConfig: UserConfigExport<'vite'> = {
     alias: {
-      '@': path.resolve(__dirname, '/src')
+      '@': path.resolve(__dirname, '../src')
     },
     projectName: 'taro-weather',
     date: '2025-4-28',

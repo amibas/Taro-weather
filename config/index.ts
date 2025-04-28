@@ -49,6 +49,8 @@ export default defineConfig<'vite'>(async (merge, {command, mode}) => {
       publicPath: '/',
       staticDirectory: 'static',
 
+      esnextModules: ["@taroify"],
+
       miniCssExtractPluginOption: {
         ignoreOrder: true,
         filename: 'css/[name].[hash].css',

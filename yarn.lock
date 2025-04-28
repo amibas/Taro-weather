@@ -1267,7 +1267,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7":
   version: 7.27.0
   resolution: "@babel/runtime@npm:7.27.0"
   dependencies:
@@ -2376,6 +2376,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@taroify/core@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@taroify/core@npm:0.8.0"
+  dependencies:
+    "@taroify/hooks": "npm:^0.8.0"
+    "@taroify/icons": "npm:^0.8.0"
+    classnames: "npm:^2.2.6"
+    lodash: "npm:^4.17.21"
+    promise: "npm:^8.1.0"
+    raf: "npm:^3.4.1"
+    react-is: "npm:^18.2.0"
+    react-transition-group: "npm:^4.4.1"
+  peerDependencies:
+    "@tarojs/components": ">=3"
+    "@tarojs/taro": ">=3"
+    react: ^18.2.0
+  checksum: 10c0/6a6a61755846eafe79e22a61d035bf5a2abd200a5de5838b89bd8a47852ca3018cedf01cd487a8a61284ae7af08c24cecc80880e82d92e63b2c6d18f000e5a4b
+  languageName: node
+  linkType: hard
+
+"@taroify/hooks@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@taroify/hooks@npm:0.8.0"
+  dependencies:
+    "@vant/area-data": "npm:^1.2.1"
+  peerDependencies:
+    "@tarojs/taro": ">=3"
+    lodash: ^4.17.21
+    react: ^18.2.0
+  checksum: 10c0/79b49a07d3aaabc2cf2f1a53d496d56e0429166817fd8f6dc099d2c91484266bf27600c112689b787ec3988ba59fd13a7eec249c22e980d3445af72520b29431
+  languageName: node
+  linkType: hard
+
+"@taroify/icons@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@taroify/icons@npm:0.8.0"
+  dependencies:
+    classnames: "npm:^2.2.6"
+  peerDependencies:
+    "@tarojs/components": ">=3"
+  checksum: 10c0/fe014f8ae74ce69b86c6303de793cd0aafc4e80acc3c021848f6508bc69234a905f3ee65081eea25a2d2a1f9de763becb85798cd7a0854ed20f00a66c1b3aefc
+  languageName: node
+  linkType: hard
+
 "@tarojs/api@npm:4.0.12":
   version: 4.0.12
   resolution: "@tarojs/api@npm:4.0.12"
@@ -3449,6 +3493,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vant/area-data@npm:^1.2.1":
+  version: 1.5.2
+  resolution: "@vant/area-data@npm:1.5.2"
+  checksum: 10c0/5b304b2f85b039dcac2bdc76344d8ea3389f9fc347ec8bf7de53d90e3693d60aac8810efeebbd31182cda0a60609f7cb9be60d275efb81b848668e523ea5a40f
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-legacy@npm:^4.1.1":
   version: 4.1.1
   resolution: "@vitejs/plugin-legacy@npm:4.1.1"
@@ -3749,6 +3800,13 @@ __metadata:
     get-intrinsic: "npm:^1.2.6"
     is-array-buffer: "npm:^3.0.4"
   checksum: 10c0/2f2459caa06ae0f7f615003f9104b01f6435cc803e11bd2a655107d52a1781dc040532dc44d93026b694cc18793993246237423e13a5337e86b43ed604932c06
+  languageName: node
+  linkType: hard
+
+"asap@npm:~2.0.6":
+  version: 2.0.6
+  resolution: "asap@npm:2.0.6"
+  checksum: 10c0/c6d5e39fe1f15e4b87677460bd66b66050cd14c772269cee6688824c1410a08ab20254bb6784f9afb75af9144a9f9a7692d49547f4d19d715aeb7c0318f3136d
   languageName: node
   linkType: hard
 
@@ -4323,7 +4381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5":
+"classnames@npm:^2.2.5, classnames@npm:^2.2.6":
   version: 2.5.1
   resolution: "classnames@npm:2.5.1"
   checksum: 10c0/afff4f77e62cea2d79c39962980bf316bacb0d7c49e13a21adaadb9221e1c6b9d3cdb829d8bb1b23c406f4e740507f37e1dcf506f7e3b7113d17c5bab787aa69
@@ -4854,6 +4912,16 @@ __metadata:
   dependencies:
     esutils: "npm:^2.0.2"
   checksum: 10c0/c96bdccabe9d62ab6fea9399fdff04a66e6563c1d6fb3a3a063e8d53c3bb136ba63e84250bbf63d00086a769ad53aef92d2bd483f03f837fc97b71cbee6b2520
+  languageName: node
+  linkType: hard
+
+"dom-helpers@npm:^5.0.1":
+  version: 5.2.1
+  resolution: "dom-helpers@npm:5.2.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.8.7"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/f735074d66dd759b36b158fa26e9d00c9388ee0e8c9b16af941c38f014a37fc80782de83afefd621681b19ac0501034b4f1c4a3bff5caa1b8667f0212b5e124c
   languageName: node
   linkType: hard
 
@@ -8346,6 +8414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"performance-now@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "performance-now@npm:2.1.0"
+  checksum: 10c0/22c54de06f269e29f640e0e075207af57de5052a3d15e360c09b9a8663f393f6f45902006c1e71aa8a5a1cdfb1a47fe268826f8496d6425c362f00f5bc3e85d9
+  languageName: node
+  linkType: hard
+
 "picocolors@npm:^1.0.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
@@ -8650,7 +8725,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"promise@npm:^8.1.0":
+  version: 8.3.0
+  resolution: "promise@npm:8.3.0"
+  dependencies:
+    asap: "npm:~2.0.6"
+  checksum: 10c0/6fccae27a10bcce7442daf090279968086edd2e3f6cebe054b71816403e2526553edf510d13088a4d0f14d7dfa9b9dfb188cab72d6f942e186a4353b6a29c8bf
+  languageName: node
+  linkType: hard
+
+"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -8728,6 +8812,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: "npm:^2.1.0"
+  checksum: 10c0/337f0853c9e6a77647b0f499beedafea5d6facfb9f2d488a624f88b03df2be72b8a0e7f9118a3ff811377d534912039a3311815700d2b6d2313f82f736f9eb6e
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -8770,6 +8863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:^18.2.0":
+  version: 18.3.1
+  resolution: "react-is@npm:18.3.1"
+  checksum: 10c0/f2f1e60010c683479e74c63f96b09fb41603527cd131a9959e2aee1e5a8b0caf270b365e5ca77d4a6b18aae659b60a86150bb3979073528877029b35aecd2072
+  languageName: node
+  linkType: hard
+
 "react-reconciler@npm:0.29.0":
   version: 0.29.0
   resolution: "react-reconciler@npm:0.29.0"
@@ -8793,6 +8893,21 @@ __metadata:
   version: 0.17.0
   resolution: "react-refresh@npm:0.17.0"
   checksum: 10c0/002cba940384c9930008c0bce26cac97a9d5682bc623112c2268ba0c155127d9c178a9a5cc2212d560088d60dfd503edd808669a25f9b377f316a32361d0b23c
+  languageName: node
+  linkType: hard
+
+"react-transition-group@npm:^4.4.1":
+  version: 4.4.5
+  resolution: "react-transition-group@npm:4.4.5"
+  dependencies:
+    "@babel/runtime": "npm:^7.5.5"
+    dom-helpers: "npm:^5.0.1"
+    loose-envify: "npm:^1.4.0"
+    prop-types: "npm:^15.6.2"
+  peerDependencies:
+    react: ">=16.6.0"
+    react-dom: ">=16.6.0"
+  checksum: 10c0/2ba754ba748faefa15f87c96dfa700d5525054a0141de8c75763aae6734af0740e77e11261a1e8f4ffc08fd9ab78510122e05c21c2d79066c38bb6861a886c82
   languageName: node
   linkType: hard
 
@@ -9925,6 +10040,7 @@ __metadata:
     "@babel/plugin-transform-class-properties": "npm:7.25.9"
     "@babel/preset-react": "npm:^7.24.1"
     "@babel/runtime": "npm:^7.24.4"
+    "@taroify/core": "npm:^0.8.0"
     "@tarojs/cli": "npm:4.0.12"
     "@tarojs/components": "npm:4.0.12"
     "@tarojs/helper": "npm:4.0.12"

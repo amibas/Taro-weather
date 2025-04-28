@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import {getLocation, setLocation} from "@/storage/location";
+import {getLocationStorage, setLocationStorage} from "@/storages/location";
 import {amapConfig as config} from '@/config'
 
 export const regeo = async (location: { longitude: number, latitude: number }) => {
@@ -19,11 +19,11 @@ export const taroGetLocation = async () => {
   });
   const addressComponentResult = await regeo({longitude: location.longitude, latitude: location.latitude});
 
-  setLocation({
+  setLocationStorage({
     latitude: location.latitude,
     longitude: location.longitude,
     addressComponent: addressComponentResult.regeocode.addressComponent
   });
 
-  return getLocation();
+  return getLocationStorage();
 }

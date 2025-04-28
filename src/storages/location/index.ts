@@ -6,11 +6,11 @@ export interface ILocation {
   addressComponent: any;
 }
 
-export const setLocation = (location: ILocation) => {
+export const setLocationStorage = (location: ILocation) => {
   Taro.setStorageSync('location', location);
 }
 
-export const getLocation = async () => {
+export const getLocationStorage = async () => {
   return await Taro.getStorage<ILocation>({
     key: 'location'
   }).then((result) => {

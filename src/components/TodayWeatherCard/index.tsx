@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getLocation, ILocation} from "@/storage/location";
+import {getLocationStorage, ILocation} from "@/storages/location";
 
 import "./index.scss";
 
@@ -9,7 +9,7 @@ export const TodayWeatherCard = () => {
   useEffect(() => {
     const fetchLocation = async () => {
       try {
-        const loc = await getLocation();
+        const loc = await getLocationStorage();
         setLocation(loc);
       } catch (error) {
         console.error("Failed to fetch location, retrying...", error);

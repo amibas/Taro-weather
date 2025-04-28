@@ -53,6 +53,7 @@
     "@tarojs/runtime": "4.0.12",
     "@tarojs/shared": "4.0.12",
     "@tarojs/taro": "4.0.12",
+    "jose": "^6.0.10",
     "qweather-icons": "^1.6.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

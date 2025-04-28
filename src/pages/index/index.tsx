@@ -8,10 +8,9 @@ import './index.scss'
 export default function Index() {
   useLoad(async () => {
     console.log('Page loaded.');
-    console.log(await taroGetLocation());
+    await taroGetLocation();
     console.log(await getLocation());
   })
-
 
   return (
     <div className='container'>

@@ -1,9 +1,22 @@
+import {useState} from "react";
+import {getLocation, ILocation} from "@/storage/location";
+
 import "./index.scss";
 
 export const TodayWeatherCard = () => {
+  const [location, setLocation] = useState<ILocation>();
+  getLocation().then(res => {
+    setLocation(res);
+  })
+
   return (
     <div className='card'>
-      <section className='location'>双流区 锦华路四段</section>
+      <section className='location'>
+        {location?.addressComponent.province}
+        {location?.addressComponent.city}
+        {location?.addressComponent.district}
+        {location?.addressComponent.township}
+      </section>
       <section className='weather'>
         <div className='current-temperature'>26°</div>
         <div className='current-weather'>

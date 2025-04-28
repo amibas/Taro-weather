@@ -8832,6 +8832,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qweather-icons@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "qweather-icons@npm:1.6.0"
+  checksum: 10c0/38ac46941e83a3de54eae35379b2789fd188ac168316a22cc3c0b9ba1fe3a04f4164600cac40ad7b182c100428c57e364702986498faa4b995e4e647c8d21275
+  languageName: node
+  linkType: hard
+
 "raf@npm:^3.4.1":
   version: 3.4.1
   resolution: "raf@npm:3.4.1"
@@ -10088,6 +10095,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.34.1"
     eslint-plugin-react-hooks: "npm:^4.4.0"
     postcss: "npm:^8.4.38"
+    qweather-icons: "npm:^1.6.0"
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
     react-refresh: "npm:^0.14.0"

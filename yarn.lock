@@ -3511,6 +3511,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vant/area-data@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@vant/area-data@npm:2.0.0"
+  checksum: 10c0/d19a4ebba9fede74c2dc216f584b64b4c9c3e47c0b2548b699cc5ea3860094e33df71492f5203d47a26ef1d89a5de3f2cb4e05f8e831d6ed86244219b1af7db6
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-legacy@npm:^4.1.1":
   version: 4.1.1
   resolution: "@vitejs/plugin-legacy@npm:4.1.1"
@@ -10094,6 +10101,7 @@ __metadata:
     "@tarojs/taro": "npm:4.0.12"
     "@tarojs/vite-runner": "npm:4.0.12"
     "@types/react": "npm:^18.0.0"
+    "@vant/area-data": "npm:^2.0.0"
     "@vitejs/plugin-react": "npm:^4.3.0"
     babel-plugin-import: "npm:^1.13.8"
     babel-preset-taro: "npm:4.0.12"

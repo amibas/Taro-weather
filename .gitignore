@@ -8,3 +8,7 @@ node_modules/
 *.local
 .yarn
 .idea
+
+/ed25519-private.pem
+/ed25519-public.pem
+/ed25519_private_pkcs8.pem

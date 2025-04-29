@@ -22,14 +22,22 @@ export default defineConfig<'vite'>(async (merge, {command, mode}) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: ['@tarojs/plugin-html'],
+    plugins: [['@tarojs/plugin-html', {pxtransformBlackList: [/demo-/, /van-/]}]],
     defineConstants: {},
     copy: {
       patterns: [],
       options: {}
     },
     framework: 'react',
-    compiler: 'vite',
+    compiler: {
+      type: 'vite',
+      prebundle: {
+        enable: true,
+        exclude: [
+          "@taroify/core"
+        ]
+      }
+    },
     mini: {
       postcss: {
         pxtransform: {
@@ -37,7 +45,7 @@ export default defineConfig<'vite'>(async (merge, {command, mode}) => {
           config: {}
         },
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
           config: {
             namingPattern: 'module', // 转换模式，取值为 global/module
             generateScopedName: '[name]__[local]___[hash:base64:5]'
@@ -62,7 +70,7 @@ export default defineConfig<'vite'>(async (merge, {command, mode}) => {
           config: {}
         },
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
           config: {
             namingPattern: 'module', // 转换模式，取值为 global/module
             generateScopedName: '[name]__[local]___[hash:base64:5]'
@@ -74,7 +82,7 @@ export default defineConfig<'vite'>(async (merge, {command, mode}) => {
       appName: 'taroDemo',
       postcss: {
         cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+          enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
     }

@@ -1,7 +1,7 @@
 import {PropsWithChildren} from 'react'
 import {useLaunch} from '@tarojs/taro'
-import "@taroify/icons/index.scss"
-import "@taroify/core/index.scss"
+// import "@taroify/icons/index.scss"
+// import "@taroify/core/index.scss"
 
 import './app.scss'
 

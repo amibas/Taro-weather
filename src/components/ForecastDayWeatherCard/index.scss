@@ -1,0 +1,43 @@
+.forecast-card {
+  width: 75%;
+
+  margin-top: 400px;
+  padding: 25px;
+
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(78, 100, 146, 0.05);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+
+  .forecast-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin: 20px 0;
+      flex-wrap: nowrap;
+
+      .time {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .weather {
+        margin-right: 250px;
+      }
+
+      .temperature {
+        margin-right: 10px;
+      }
+    }
+  }
+}

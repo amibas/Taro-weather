@@ -1,4 +1,4 @@
-.card {
+.weather-card {
   width: 75%;
 
   margin-top: 100px;
@@ -9,7 +9,7 @@
 
   background-color: rgba(78, 100, 146, 0.05);
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 20px;
 
   .location {
     font-size: 30px;

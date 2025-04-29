@@ -21,13 +21,13 @@ export const TodayWeatherCard = () => {
       }
     };
 
-    if (!location) {
+    if (!location || !weather) {
       fetchState().then();
     }
   }, [location, weather]);
 
   return (
-    <div className='card'>
+    <div className='weather-card'>
       <section className='location'>
         {location?.addressComponent.province}
         {location?.addressComponent.city}

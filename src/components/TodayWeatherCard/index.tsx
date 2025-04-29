@@ -1,12 +1,14 @@
 import {useEffect, useState} from "react";
 import {getLocationStorage, ILocation} from "@/storages/location";
 import {getWeatherStorge, IWeather} from "@/storages/weather";
+import {LocationSelector} from "@/components";
 
 import "./index.scss";
 
 export const TodayWeatherCard = () => {
   const [location, setLocation] = useState<ILocation>();
   const [weather, setWeather] = useState<IWeather>();
+  const [isShow, setIsShow] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchState = async () => {
@@ -28,7 +30,7 @@ export const TodayWeatherCard = () => {
 
   return (
     <div className='weather-card'>
-      <section className='location'>
+      <section className='location' onClick={() => setIsShow(true)}>
         {location?.addressComponent.province}
         {location?.addressComponent.city}
         {location?.addressComponent.district}
@@ -46,6 +48,7 @@ export const TodayWeatherCard = () => {
           <button className='wind'>{weather?.live.winddirection}风{weather?.live.windpower}</button>
         </div>
       </section>
+      <LocationSelector isShow={isShow} setIsShow={setIsShow} />
     </div>
   );
 };

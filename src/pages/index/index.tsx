@@ -1,10 +1,9 @@
 import {useError, useLoad} from '@tarojs/taro'
-import {TodayWeatherCard} from "@/components";
+import {ForecastWeatherCard, TodayWeatherCard} from "@/components";
 import {taroGetLocation} from "@/utils/location";
 import {getLocationStorage} from "@/storages/location";
 import {taroGetWeather} from "@/utils/weather";
 import {getWeatherStorge} from "@/storages/weather";
-import {ForecastWeatherCard} from "@/components/ForecastDayWeatherCard";
 
 import './index.scss'
 

@@ -1,4 +1,4 @@
-import {useLoad} from '@tarojs/taro'
+import {useError, useLoad} from '@tarojs/taro'
 import {TodayWeatherCard} from "@/components";
 import {taroGetLocation} from "@/utils/location";
 import {getLocationStorage} from "@/storages/location";
@@ -16,9 +16,13 @@ export default function Index() {
     console.log(await getWeatherStorge());
   })
 
+  useError((error: any) => {
+    console.log(error);
+  })
+
   return (
     <div className='container'>
-      <TodayWeatherCard/>
+      <TodayWeatherCard />
     </div>
   )
 }

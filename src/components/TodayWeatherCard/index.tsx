@@ -16,7 +16,6 @@ export const TodayWeatherCard = () => {
         setLocation(locationStorage);
         setWeather(weatherStorage);
       } catch (error) {
-        console.error("Failed to fetch location, retrying...", error);
         // 递归调用，直到成功获取位置
         await fetchState();
       }
@@ -36,15 +35,15 @@ export const TodayWeatherCard = () => {
         {location?.addressComponent.township}
       </section>
       <section className='weather'>
-        <div className='current-temperature'>26°</div>
+        <div className='current-temperature'>{weather?.live.temperature}°</div>
         <div className='current-weather'>
-          <span>阴</span>
-          <span>最高27°</span>
-          <span>最低16°</span>
+          <span>{weather?.live.weather}</span>
+          <span>最高{weather?.forecast.casts[0].daytemp}°</span>
+          <span>最低{weather?.forecast.casts[0].nighttemp}°</span>
         </div>
         <div className='other-information'>
-          <button className='air-quality'>空气良 56</button>
-          <button className='wind'>东南风</button>
+          <button className='air-quality'>空气湿度 {weather?.live.humidity}</button>
+          <button className='wind'>{weather?.live.winddirection}风{weather?.live.windpower}</button>
         </div>
       </section>
     </div>

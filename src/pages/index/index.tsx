@@ -1,24 +1,19 @@
-import {useError, useLoad} from '@tarojs/taro'
+import {useLoad} from '@tarojs/taro'
 import {ForecastWeatherCard, TodayWeatherCard} from "@/components";
 import {taroGetLocation} from "@/utils/location";
-import {getLocationStorage} from "@/storages/location";
+import {setLocationStorage} from "@/storages/location";
 import {taroGetWeather} from "@/utils/weather";
-import {getWeatherStorge} from "@/storages/weather";
-
+import {setWeatherStorge} from "@/storages/weather";
 import './index.scss'
 
 export default function Index() {
   useLoad(async () => {
     console.log('Page loaded.');
-    await taroGetLocation();
-    console.log(await getLocationStorage());
-    await taroGetWeather();
-    console.log(await getWeatherStorge());
-  })
-
-  useError((error: any) => {
-    console.log(error);
-  })
+    const location = await taroGetLocation();
+    setLocationStorage(location);
+    const weather = await taroGetWeather();
+    setWeatherStorge(weather);
+  });
 
   return (
     <div className='container'>

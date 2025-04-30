@@ -1,17 +1,26 @@
 import {PropsWithChildren} from 'react'
 import {useLaunch} from '@tarojs/taro'
-// import "@taroify/icons/index.scss"
-// import "@taroify/core/index.scss"
+import {Provider} from "react-redux";
+import {store} from '@/store';
+import {taroGetLocation} from "@/utils/location";
+import {setLocationStorage} from "@/storages/location";
+import {taroGetWeather} from "@/utils/weather";
+import {setWeatherStorge} from "@/storages/weather";
 
 import './app.scss'
 
 function App({children}: PropsWithChildren<any>) {
-  useLaunch(() => {
-    console.log('App launched.')
+  useLaunch(async () => {
+    console.log('App launched.');
+
   })
 
   // children 是将要会渲染的页面
-  return children
+  return (
+    <Provider store={store}>
+      {children}
+    </Provider>
+  )
 }
 
 

@@ -1,32 +1,33 @@
 import {useEffect, useState} from "react";
-import {getLocationStorage, ILocation} from "@/storages/location";
-import {getWeatherStorge, IWeather} from "@/storages/weather";
-import {LocationSelector} from "@/components";
-
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "@/store";
+import {LocationSelector} from "@/components/LocationSelector";
+import {getLocationStorage} from "@/storages/location";
+import {getWeatherStorge} from "@/storages/weather";
+import {setLocation, setWeather} from "@/store/reducers";
 import "./index.scss";
 
 export const TodayWeatherCard = () => {
-  const [location, setLocation] = useState<ILocation>();
-  const [weather, setWeather] = useState<IWeather>();
-  const [isShow, setIsShow] = useState<boolean>(false);
+  const dispatch = useDispatch<AppDispatch>()
+  const location = useSelector((state: RootState) => state.location);
+  const weather = useSelector((state: RootState) => state.weather);
 
   useEffect(() => {
-    const fetchState = async () => {
-      try {
-        const locationStorage = await getLocationStorage();
-        const weatherStorage = await getWeatherStorge();
-        setLocation(locationStorage);
-        setWeather(weatherStorage);
-      } catch (error) {
-        // 递归调用，直到成功获取位置
-        await fetchState();
-      }
-    };
+    const locationStorage = getLocationStorage();
+    const weatherStorage = getWeatherStorge();
+    console.log(locationStorage, weatherStorage);
+    dispatch(setLocation(locationStorage));
+    console.log(location);
+    dispatch(setWeather(weatherStorage));
+    console.log(weatherStorage);
+    console.log(weather);
+    // if (locationStorage && weatherStorage) {
+    //   dispatch({type: setLocation.type, payload: locationStorage});
+    //   dispatch({type: setWeather.type, payload: weatherStorage});
+    // }
+  }, [dispatch]);
 
-    if (!location || !weather) {
-      fetchState().then();
-    }
-  }, [location, weather]);
+  const [isShow, setIsShow] = useState<boolean>(false);
 
   return (
     <div className='weather-card'>
@@ -48,7 +49,7 @@ export const TodayWeatherCard = () => {
           <button className='wind'>{weather?.live.winddirection}风{weather?.live.windpower}</button>
         </div>
       </section>
-      <LocationSelector isShow={isShow} setIsShow={setIsShow} />
+      <LocationSelector isShow={isShow} setIsShow={setIsShow}/>
     </div>
   );
 };

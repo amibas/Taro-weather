@@ -1,26 +1,10 @@
-import {useEffect, useState} from 'react';
-import {getWeatherStorge, IWeather} from "@/storages/weather";
+import {RootState} from '@/store';
+import {useSelector} from 'react-redux';
 
 import './index.scss'
 
 export const ForecastWeatherCard = () => {
-  const [weather, setWeather] = useState<IWeather>();
-
-  useEffect(() => {
-    const fetchState = async () => {
-      try {
-        const weatherStorage = await getWeatherStorge();
-        setWeather(weatherStorage);
-      } catch (error) {
-        // 递归调用，直到成功获取位置
-        await fetchState();
-      }
-    };
-
-    if (!weather) {
-      fetchState().then();
-    }
-  }, [weather]);
+  const weather = useSelector((state: RootState) => state.weather);
 
   return (
     <div className='forecast-card'>

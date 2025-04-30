@@ -1,26 +1,25 @@
 import {amapConfig as config} from '@/config'
 import Taro from "@tarojs/taro";
 import {getLocationStorage} from "@/storages/location";
-import {setWeatherStorge} from "@/storages/weather";
+import {IWeather} from "@/storages/weather";
 
 export const taroGetWeather = async () => {
-  const liveWeather = await taroGetLiveWeather()
-  const forecastWeather = await taroGetForecastWeather();
+  const liveWeatherResult = await taroGetLiveWeather()
+  const forecastWeatherResult = await taroGetForecastWeather();
 
-  await setWeatherStorge({
-    live: liveWeather.lives[0],
-    forecast: forecastWeather.forecasts[0],
-  });
+  const liveWeather = liveWeatherResult.lives[0];
+  const forecastWeather = forecastWeatherResult.forecasts[0];
+
 
   return {
-    liveResult: liveWeather,
-    forecastResult: forecastWeather,
-  };
+    live: liveWeather,
+    forecast: forecastWeather
+  } as IWeather;
 };
 
 
 export const taroGetLiveWeather = async () => {
-  const location = await getLocationStorage();
+  const location = getLocationStorage();
   const adcode = location.addressComponent.adcode;
   const result = await Taro.request({
     url: config.weatherUrl,
@@ -35,7 +34,7 @@ export const taroGetLiveWeather = async () => {
 };
 
 export const taroGetForecastWeather = async () => {
-  const location = await getLocationStorage();
+  const location = getLocationStorage();
   const adcode = location.addressComponent.adcode;
   const result = await Taro.request({
     url: config.weatherUrl,

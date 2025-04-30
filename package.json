@@ -36,6 +36,7 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.24.4",
+    "@reduxjs/toolkit": "^2.7.0",
     "@taroify/core": "^0.8.0",
     "@tarojs/components": "4.0.12",
     "@tarojs/helper": "4.0.12",
@@ -50,6 +51,7 @@
     "@tarojs/plugin-platform-tt": "4.0.12",
     "@tarojs/plugin-platform-weapp": "4.0.12",
     "@tarojs/react": "4.0.12",
+    "@tarojs/redux": "2.2.10",
     "@tarojs/runtime": "4.0.12",
     "@tarojs/shared": "4.0.12",
     "@tarojs/taro": "4.0.12",
@@ -57,7 +59,9 @@
     "jose": "^6.0.10",
     "qweather-icons": "^1.6.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",

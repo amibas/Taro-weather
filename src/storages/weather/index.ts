@@ -36,14 +36,10 @@ export interface IWeather {
   live: ILiveWeather
 }
 
-export const setWeatherStorge = async (weather: IWeather) => {
+export const setWeatherStorge = (weather: IWeather) => {
   Taro.setStorageSync('weather', weather);
 }
 
-export const getWeatherStorge = async () => {
-  return await Taro.getStorage<IWeather>({
-    key: 'weather'
-  }).then((result) => {
-    return result.data;
-  })
+export const getWeatherStorge = () => {
+  return Taro.getStorageSync<IWeather>('weather');
 }

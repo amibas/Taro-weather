@@ -10,11 +10,6 @@ export const setLocationStorage = (location: ILocation) => {
   Taro.setStorageSync('location', location);
 }
 
-export const getLocationStorage = async () => {
-  return await Taro.getStorage<ILocation>({
-    key: 'location'
-  }).then((result) => {
-      return result.data;
-    }
-  );
+export const getLocationStorage = () => {
+  return Taro.getStorageSync<ILocation>('location');
 }

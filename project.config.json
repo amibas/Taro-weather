@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "taro-weather",
   "description": "Taro框架天气查询小程序",
-  "appid": "wx68dd8b3dc8436cdf",
+  "appid": "",
   "setting": {
     "urlCheck": true,
     "es6": false,

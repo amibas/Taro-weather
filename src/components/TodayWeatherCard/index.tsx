@@ -17,14 +17,7 @@ export const TodayWeatherCard = () => {
     const weatherStorage = getWeatherStorge();
     console.log(locationStorage, weatherStorage);
     dispatch(setLocation(locationStorage));
-    console.log(location);
     dispatch(setWeather(weatherStorage));
-    console.log(weatherStorage);
-    console.log(weather);
-    // if (locationStorage && weatherStorage) {
-    //   dispatch({type: setLocation.type, payload: locationStorage});
-    //   dispatch({type: setWeather.type, payload: weatherStorage});
-    // }
   }, [dispatch]);
 
   const [isShow, setIsShow] = useState<boolean>(false);

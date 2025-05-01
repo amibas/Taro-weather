@@ -2,11 +2,13 @@ import {AreaPicker, Popup} from "@taroify/core";
 import {areaList} from "@vant/area-data";
 import {geo} from "@/utils/location";
 import {taroGetWeather} from "@/utils/weather";
-import {setLocation as setLocationStore} from '@/store/reducers'
+import {setLocation as setLocationStore, setWeather} from '@/store/reducers'
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "@/store";
 
 import './index.scss';
+import {setLocationStorage} from "@/storages/location";
+import {setWeatherStorge} from "@/storages/weather";
 
 export interface ILocationSelectorProp {
   isShow: boolean;
@@ -28,6 +30,11 @@ export const LocationSelector = (props: ILocationSelectorProp) => {
         address: province + city + county,
       }).then((res) => {
         console.log(res);
+        setLocationStorage({
+          longitude: res.geocodes[0].location.split(',')[0],
+          latitude: res.geocodes[0].location.split(',')[1],
+          addressComponent: res.geocodes[0],
+        });
         dispatch(
           setLocationStore({
             longitude: res.geocodes[0].location.split(',')[0],
@@ -35,7 +42,11 @@ export const LocationSelector = (props: ILocationSelectorProp) => {
             addressComponent: res.geocodes[0],
           })
         );
-        taroGetWeather().then();
+        taroGetWeather().then(weatherResult => {
+          console.log(weatherResult);
+          setWeatherStorge({forecast: weatherResult.forecast, live: weatherResult.live});
+          dispatch(setWeather({forecast: weatherResult.forecast, live: weatherResult.live}));
+        });
       });
 
 

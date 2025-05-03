@@ -47,6 +47,11 @@ export default function Index() {
     console.log(result);
     if (result.success) {
       setIsLoading(false);
+    } else {
+      await Taro.showToast({
+        title: result.message,
+        icon: 'none',
+      });
     }
   });
 

@@ -15,7 +15,6 @@ export const TodayWeatherCard = () => {
   useEffect(() => {
     const locationStorage = getLocationStorage();
     const weatherStorage = getWeatherStorge();
-    console.log(locationStorage, weatherStorage);
     dispatch(setLocation(locationStorage));
     dispatch(setWeather(weatherStorage));
   }, [dispatch]);

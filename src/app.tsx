@@ -5,10 +5,10 @@ import {store} from '@/store';
 
 import './app.scss'
 
+
 function App({children}: PropsWithChildren<any>) {
   useLaunch(async () => {
     console.log('App launched.');
-
   })
 
   // children 是将要会渲染的页面

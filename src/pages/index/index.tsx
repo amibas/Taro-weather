@@ -6,6 +6,7 @@ import {taroGetWeather} from "@/utils/weather";
 import {setWeatherStorge} from "@/storages/weather";
 import "./index.scss";
 import {useState} from "react";
+import {Loading, Popup} from "@taroify/core";
 
 
 export const setStorgeCallback = async () => {
@@ -50,7 +51,11 @@ export default function Index() {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <Popup open rounded style={{padding: '64px'}}>
+        <Loading type='spinner' direction='vertical'>加载中</Loading>
+      </Popup>
+    );
   }
 
   return (

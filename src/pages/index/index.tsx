@@ -6,7 +6,7 @@ import {taroGetWeather} from "@/utils/weather";
 import {setWeatherStorge} from "@/storages/weather";
 import "./index.scss";
 import {useState} from "react";
-import {Loading, Popup} from "@taroify/core";
+import {Loading, Navbar, Popup} from "@taroify/core";
 
 
 export const setStorgeCallback = async () => {
@@ -64,9 +64,12 @@ export default function Index() {
   }
 
   return (
-    <div className="container">
-      <TodayWeatherCard/>
-      <ForecastWeatherCard/>
-    </div>
+    <>
+      <Navbar style={{margin: '40px 0'}} title='主页'/>
+      <div className="container">
+        <TodayWeatherCard/>
+        <ForecastWeatherCard/>
+      </div>
+    </>
   );
 }

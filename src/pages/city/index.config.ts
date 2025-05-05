@@ -1,4 +1,5 @@
 export default definePageConfig({
   navigationStyle: 'custom',
-  navigationBarTitleText: '首页',
-});
+  navigationBarTitleText: '城市管理',
+
+})

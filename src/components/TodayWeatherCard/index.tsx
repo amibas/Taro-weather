@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useLayoutEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "@/store";
 import {LocationSelector} from "@/components/LocationSelector";
@@ -6,13 +6,14 @@ import {getLocationStorage} from "@/storages/location";
 import {getWeatherStorge} from "@/storages/weather";
 import {setLocation, setWeather} from "@/store/reducers";
 import "./index.scss";
+import Taro from "@tarojs/taro";
 
 export const TodayWeatherCard = () => {
   const dispatch = useDispatch<AppDispatch>()
   const location = useSelector((state: RootState) => state.location);
   const weather = useSelector((state: RootState) => state.weather);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const locationStorage = getLocationStorage();
     const weatherStorage = getWeatherStorge();
     dispatch(setLocation(locationStorage));
@@ -20,6 +21,12 @@ export const TodayWeatherCard = () => {
   }, [dispatch]);
 
   const [isShow, setIsShow] = useState<boolean>(false);
+
+  const handleNavigateToCity = () => {
+    Taro.navigateTo({
+      url: '/pages/city/index'
+    }).then();
+  }
 
   return (
     <div className='weather-card'>
@@ -29,7 +36,7 @@ export const TodayWeatherCard = () => {
         {location?.addressComponent.district}
         {location?.addressComponent.township}
       </section>
-      <section className='weather'>
+      <section className='weather' onClick={handleNavigateToCity}>
         <div className='current-temperature'>{weather?.live.temperature}°</div>
         <div className='current-weather'>
           <span>{weather?.live.weather}</span>

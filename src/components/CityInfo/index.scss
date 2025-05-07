@@ -1,0 +1,39 @@
+.city-info-card {
+  margin: 20rpx 0;
+  padding: 20rpx;
+  width: 90%;
+  height: 150rpx;
+  background-color: #eee;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    margin-left: 20rpx;
+
+    div {
+      margin: 30rpx 0;
+    }
+
+    .location {
+      font-size: 30rpx;
+    }
+
+    .weather {
+      font-size: 25rpx;
+    }
+  }
+
+  .right {
+    margin-right: 20rpx;
+
+    div {
+      text-align: center;
+    }
+
+    .current-temperature {
+      font-size: 60rpx;
+    }
+  }
+}

@@ -17,6 +17,18 @@ export const taroGetWeather = async () => {
   } as IWeather;
 };
 
+export const taroGetWeatherByAdCode = async (adcode: string) => {
+  const liveWeatherResult = await taroGetLiveWeatherByAdCode(adcode)
+  const forecastWeatherResult = await taroGetForecastWeatherByAdCode(adcode);
+
+  const liveWeather = liveWeatherResult.lives[0];
+  const forecastWeather = forecastWeatherResult.forecasts[0];
+
+  return {
+    live: liveWeather,
+    forecast: forecastWeather
+  } as IWeather;
+}
 
 export const taroGetLiveWeather = async () => {
   const location = getLocationStorage();
@@ -36,6 +48,32 @@ export const taroGetLiveWeather = async () => {
 export const taroGetForecastWeather = async () => {
   const location = getLocationStorage();
   const adcode = location.addressComponent.adcode;
+  const result = await Taro.request({
+    url: config.weatherUrl,
+    method: 'GET',
+    data: {
+      key: config.key,
+      city: adcode,
+      extensions: 'all',
+    }
+  });
+  return result.data;
+};
+
+export const taroGetLiveWeatherByAdCode = async (adcode: string) => {
+  const result = await Taro.request({
+    url: config.weatherUrl,
+    method: 'GET',
+    data: {
+      key: config.key,
+      city: adcode,
+      extensions: 'base',
+    }
+  });
+  return result.data;
+};
+
+export const taroGetForecastWeatherByAdCode = async (adcode: string) => {
   const result = await Taro.request({
     url: config.weatherUrl,
     method: 'GET',

@@ -1,13 +1,14 @@
 .city-info-card {
   margin: 20rpx 0;
   padding: 20rpx;
-  width: 90%;
+  width: 85%;
   height: 150rpx;
-  background-color: #eee;
+  background-color: #ffffff;
   border-radius: 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 10rpx 10rpx 10rpx 10rpx rgba(0, 0, 0, 0.15);
 
   .left {
     margin-left: 20rpx;

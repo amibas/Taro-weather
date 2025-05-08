@@ -7,7 +7,7 @@ import {setWeatherStorge} from "@/storages/weather";
 import "./index.scss";
 import {useState} from "react";
 import {Loading, Navbar, Popup} from "@taroify/core";
-import {setCityStorage} from "@/storages/citys";
+import {ICity, setCityStorage} from "@/storages/citys";
 
 
 export const setStorgeCallback = async () => {
@@ -23,7 +23,7 @@ export const setStorgeCallback = async () => {
     setLocationStorage(location);
     const weather = await taroGetWeather();
     setWeatherStorge(weather);
-    setCityStorage({location, weather});
+    setCityStorage({location, weather, isCurrent: true} as ICity);
     return {
       location,
       weather,

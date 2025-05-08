@@ -38,7 +38,7 @@ export const LocationSelector = (props: ILocationSelectorProp) => {
         dispatch(setLocationStore(location));
 
         taroGetWeatherByAdCode(county).then(weatherResult => {
-          setCityStorage({weather: weatherResult, location: location});
+          setCityStorage({weather: weatherResult, location: location, isCurrent: true});
           dispatch(setWeather(weatherResult));
         });
       });

@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {ICity} from "@/storages/citys";
+import {getCityStorage, ICity} from "@/storages/citys";
 
 const initialState: ICity[] = [];
 const citysStore = createSlice({
@@ -12,9 +12,16 @@ const citysStore = createSlice({
     removeCityByAdCode(state, action: { payload: ICity, type: string }) {
       const adcode = action.payload
       return state.filter(city => city.location.addressComponent.adcode !== adcode)
-    }
+    },
+    getCityStateByStorage(state) {
+      state.length = 0;
+      const citysStorage = getCityStorage();
+      citysStorage.map(city => {
+        state.push(city);
+      })
+    },
   }
 });
 
-export const {addCity, removeCityByAdCode} = citysStore.actions;
+export const {addCity, removeCityByAdCode, getCityStateByStorage} = citysStore.actions;
 export default citysStore.reducer;

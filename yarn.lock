@@ -3041,16 +3041,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tarojs/redux@npm:2.2.10":
-  version: 2.2.10
-  resolution: "@tarojs/redux@npm:2.2.10"
-  dependencies:
-    "@tarojs/taro": "npm:^2.2.10"
-    "@tarojs/utils": "npm:^2.2.10"
-  checksum: 10c0/523394a09fe88d085966920b364ba9b4b67b887e070961c9a0a8998d344163c359753d45f5cde87f3e78b14998e42f076542107fee87d09d22f0f5f509c38072
-  languageName: node
-  linkType: hard
-
 "@tarojs/router@npm:4.0.12":
   version: 4.0.12
   resolution: "@tarojs/router@npm:4.0.12"
@@ -3174,24 +3164,6 @@ __metadata:
     webpack-dev-server:
       optional: true
   checksum: 10c0/72338d6543363dc86bcb317d22db45142867b3855e1d96d0ef19402191ba0ff3f1f946ba97523603cedf2eb5fa1b5fe45f205b66b86be0d640605311e30b0068
-  languageName: node
-  linkType: hard
-
-"@tarojs/taro@npm:^2.2.10":
-  version: 2.2.22
-  resolution: "@tarojs/taro@npm:2.2.22"
-  dependencies:
-    "@tarojs/utils": "npm:2.2.22"
-  peerDependencies:
-    nervjs: ^1.5.0
-  checksum: 10c0/eb8a481efd66d5567809dad210fd9e4a5bbc35e5a88ddb273c0bf5d21fa7ef4b237d0d962285e081e1f91484fe24dfb2ea9d544e9cc3df32709d3775a6d90e23
-  languageName: node
-  linkType: hard
-
-"@tarojs/utils@npm:2.2.22, @tarojs/utils@npm:^2.2.10":
-  version: 2.2.22
-  resolution: "@tarojs/utils@npm:2.2.22"
-  checksum: 10c0/ad9a172ef6773a101cfc0a87eac287753b63422ea886b99cab1f48df072aed559898a9ac9c17e0f85d78ec1f8caabf0b63833ca1742e29f3dd694208b6d9f0c1
   languageName: node
   linkType: hard
 
@@ -10217,7 +10189,6 @@ __metadata:
     "@tarojs/plugin-platform-tt": "npm:4.0.12"
     "@tarojs/plugin-platform-weapp": "npm:4.0.12"
     "@tarojs/react": "npm:4.0.12"
-    "@tarojs/redux": "npm:2.2.10"
     "@tarojs/runtime": "npm:4.0.12"
     "@tarojs/shared": "npm:4.0.12"
     "@tarojs/taro": "npm:4.0.12"

@@ -9,7 +9,7 @@ const citysStore = createSlice({
     addCity(state, action: { payload: ICity, type: string }) {
       state.push(action.payload)
     },
-    removeCityByAdCode(state, action) {
+    removeCityByAdCode(state, action: { payload: ICity, type: string }) {
       const adcode = action.payload
       return state.filter(city => city.location.addressComponent.adcode !== adcode)
     }

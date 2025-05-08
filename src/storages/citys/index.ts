@@ -9,20 +9,26 @@ export interface ICity {
 }
 
 export const setCityStorage = (city: ICity) => {
-  console.log(city);
   try {
     const storage = Taro.getStorageSync('citys');
-    if (storage.some((item: ICity) => item.location.latitude === city.location.latitude && item.location.longitude === city.location.longitude)) {
+    // 是否已经存在
+    if (storage.some((item: ICity) => item.location.addressComponent.adcode === city.location.addressComponent.adcode)) {
+      storage.forEach((item: ICity) => {
+        item.isCurrent = item.location.addressComponent.adcode === city.location.addressComponent.adcode;
+      })
+      Taro.setStorageSync('citys', storage);
       return;
     }
-    // 将其他city的isCurrent设置为false
+
     storage.forEach((item: ICity) => {
       item.isCurrent = false;
-    })
+    });
     Taro.setStorageSync('citys', [...storage, city]);
+    return;
   } catch (error) {
     console.log(error);
     Taro.setStorageSync('citys', [city]);
+    return;
   }
 }
 

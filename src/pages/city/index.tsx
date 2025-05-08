@@ -6,6 +6,7 @@ import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "@/store";
 import {useLayoutEffect} from "react";
 import {getCityStateByStorage} from "@/store/reducers";
+import { ICity } from "@/storages/citys";
 
 
 export default function City() {
@@ -33,7 +34,7 @@ export default function City() {
         <View style={{fontSize: '35rpx', marginLeft: '35rpx'}}>已添加城市：</View>
         <View style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
           {
-            otherCitys && otherCitys.map(item => {
+            otherCitys && otherCitys.map((item: ICity) => {
               return <CityInfo key={item.location.addressComponent.adcode} city={item}/>
             })
           }
